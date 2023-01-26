@@ -1,0 +1,36 @@
+body{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.content{
+    background-color: rgb(246, 220, 25);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imageSlider{
+    height: 400px;
+    width: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.257);
+}
+.slide{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#slide1{
+    z-index: 1;
+}
+#slide2{
+    opacity: 0;
+    transition: opacity 2000ms ease-in-out 0s;
+    z-index: 2;
+}
+#slide3{
+    display: none;
+}
+#slide4{
+    display: none;
+}
