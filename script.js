@@ -13,18 +13,22 @@ slides[slideIndex].classList.add("active")
 function pushSlides(num){
     slides[slideIndex].classList.remove("active")
     // moving right
-    if(num){
-        if(slideIndex===slides.length){
+    if(num>0){
+        if(slideIndex===slides.length-1){
             slideIndex=0
+        } 
+        else{
+            slideIndex++
         }
-        slideIndex++
         slides[slideIndex].classList.add("active")
     } 
     else{ // moving left
         if(slideIndex===0){
-            slideIndex=slideIndex.length
+            slideIndex=slides.length -1
         }
-        slideIndex--
+        else{
+            slideIndex--
+        }
         slides[slideIndex].classList.add("active")
 
     }
