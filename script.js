@@ -49,6 +49,7 @@ function createCircles(){
     for(let i=0; i<numberOfImages; i++){
         const newCircle = document.createElement("div")
         newCircle.classList.add("circle")
+        newCircle.setAttribute("aria-id", `${i}`)
         progressCircles.append(newCircle)
     }
 }
@@ -63,4 +64,20 @@ function removeActiveCircle(){
     const circles = document.querySelectorAll(".circle")
     // remove active status from previous cirlce
     circles[slideIndex].classList.remove("activeCircle")
+}
+
+const circles = document.querySelectorAll(".circle")
+circles.forEach((element, index) => element.addEventListener("click", function(){
+    updateSlide(element, index)
+}))
+
+function updateSlide(element, index){
+    // deactive current slide and circle
+    slides[slideIndex].classList.remove("active")
+    removeActiveCircle()
+
+    // active chosen slide and circle
+    slides[index].classList.add("active")
+    slideIndex = index
+    updateActiveCircle()
 }
