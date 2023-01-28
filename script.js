@@ -81,3 +81,12 @@ function updateSlide(element, index){
     slideIndex = index
     updateActiveCircle()
 }
+
+// make slider continuosly slide to the right
+setTimeout(moveToTheRight, 2000)
+function moveToTheRight(){
+    removeActiveCircle()
+    pushSlides(1)
+    updateActiveCircle()
+    setTimeout(moveToTheRight, 2000)
+}
