@@ -1,14 +1,8 @@
-const slide1 = document.querySelector("#slide1")
-const slide2 = document.querySelector("#slide2")
-const slide3 = document.querySelector("#slide3")
-const slide4 = document.querySelector("#slide4")
-
 const slides = document.querySelectorAll(".slide")
-
-// https://alvarotrigo.com/blog/javascript-slider-how-to-make-one/
-
 let slideIndex = 0;
 slides[slideIndex].classList.add("active")
+createCircles()
+updateActiveCircle()
 
 function pushSlides(num){
     slides[slideIndex].classList.remove("active")
@@ -34,12 +28,39 @@ function pushSlides(num){
     }
 }
 
+// event listeners for arrows
 const moveLeft = document.querySelector(".moveLeft")
-const moveRight = document.querySelector(".moveRight")
-
 moveLeft.addEventListener("click", () => {
+    removeActiveCircle()
     pushSlides(-1)
+    updateActiveCircle()
 })
+const moveRight = document.querySelector(".moveRight")
 moveRight.addEventListener("click", () => {
+    removeActiveCircle()
     pushSlides(1)
+    updateActiveCircle()
 })
+
+
+function createCircles(){
+    const progressCircles = document.querySelector(".progressCircles")
+    let numberOfImages = slides.length
+    for(let i=0; i<numberOfImages; i++){
+        const newCircle = document.createElement("div")
+        newCircle.classList.add("circle")
+        progressCircles.append(newCircle)
+    }
+}
+
+
+function updateActiveCircle(){
+    const circles = document.querySelectorAll(".circle")
+    // add active status to new circle
+    circles[slideIndex].classList.add("activeCircle")
+}
+function removeActiveCircle(){
+    const circles = document.querySelectorAll(".circle")
+    // remove active status from previous cirlce
+    circles[slideIndex].classList.remove("activeCircle")
+}

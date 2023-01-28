@@ -43,3 +43,20 @@ body{
 .moveLeft:hover, .moveRight:hover{
     background-color: rgba(0,0,0,0.2);
 }
+.progressCircles{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 100px;
+}
+.circle{
+    margin-right: 5px;
+    height: 13px;
+    width: 13px;
+    border-radius: 7px;
+    background-color:#f6dc19;
+    transition: all 0.5s ease-out;
+}
+.activeCircle{
+    transform: scale(1.5);
+}
