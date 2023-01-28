@@ -23,12 +23,23 @@ body{
 .active{
     display: block;
 }
+.arrows{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 210px;
+}
 .moveLeft, .moveRight{
-    background-color: aquamarine;
-    border-radius: 20px;
+    color: white;
+    border-radius: 7px;
     padding: 5px;
+    margin: 5px;
     width: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+.moveLeft:hover, .moveRight:hover{
+    background-color: rgba(0,0,0,0.2);
 }
